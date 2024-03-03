@@ -9,3 +9,4 @@ Simple todolist project to showcase Redux
 - Sorting/filtering
 
 ## Screenshots
+![image](https://github.com/apriltaoyvr/todolist-redux/assets/95392008/80692eab-7d88-4d1c-8f5d-7c593b23ed26)
