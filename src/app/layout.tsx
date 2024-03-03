@@ -5,7 +5,7 @@ import Providers from "@/app/providers";
 import Navbar from "@/components/Navbar";
 import "./globals.css";
 
-export const fontSans = Inter({
+const fontSans = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 })
