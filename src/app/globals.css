@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .tasklist {
-    @apply relative max-h-[300px] scroll-pr-0.5 overflow-y-auto;
-    scrollbar-gutter: stable;
-  }
-}
-
 @layer utilities {
   .place-center {
     @apply place-content-center place-items-center;
