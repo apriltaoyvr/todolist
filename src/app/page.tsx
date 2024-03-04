@@ -1,10 +1,13 @@
-import { Button } from "@/components/ui";
-import HomeClient from "./client";
+import { Separator } from '@/components/ui';
+import HomeClient from './client';
 
 export default function Home() {
   return (
-    <main className='min-h-[80vh] flex flex-col place-center gap-2 p-2'>
-      <h1 className='scroll-m-20 text-4xl font-extrabold tracking-loose lg:text-5xl mb-10'>Todolist</h1>
+    <main className='place-center flex min-h-[80vh] flex-col gap-2 p-2'>
+      <h1 className='tracking-loose scroll-m-20 text-4xl font-extrabold lg:text-5xl'>
+        Todo List ✅
+      </h1>
+      <Separator className='my-4 max-w-sm' orientation='horizontal' />
       <HomeClient />
     </main>
   );

@@ -1,12 +1,17 @@
-# Todolist
-Simple todolist project to showcase Redux
+# Todo List
+
+Currently a WIP.
+A simple todo list project to showcase to showcase React, Typescript, Redux, MongoDB, Prisma, and testing libraries (Playwright)
 
 ## Todo
-- Add MongoDB and Prisma 
-- Storing todos
-  - localstorage
-  - MongoDB
-- Sorting/filtering
+
+- [x] Add Playwright
+- [ ] Add MongoDB and Prisma
+- [ ] Storing todos
+  - [ ] localstorage
+  - [ ] MongoDB
+- [ ] Sorting/filtering
 
 ## Screenshots
-![image](https://github.com/apriltaoyvr/todolist-redux/assets/95392008/80692eab-7d88-4d1c-8f5d-7c593b23ed26)
+
+![image](https://github.com/apriltaoyvr/todolist/assets/95392008/1cc9f1b3-f8e3-49be-ae09-49912485f64a)

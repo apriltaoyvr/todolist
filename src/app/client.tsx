@@ -1,9 +1,9 @@
-'use client'
+'use client';
 import { useAppSelector } from '@/lib/redux/hooks';
-import { ScrollArea } from "@/components/ui/scroll-area"
-import TaskItem from "@/components/TaskItem";
+import { ScrollArea } from '@/components/ui/scroll-area';
+import TaskItem from '@/components/TaskItem';
 import TaskAdder from '@/components/TaskAdder';
-import type { RootState, AppDispatch } from '@/lib/redux/store'
+import type { RootState, AppDispatch } from '@/lib/redux/store';
 
 // All client-side components go here
 export default function HomeClient() {
@@ -11,16 +11,14 @@ export default function HomeClient() {
 
   return (
     <>
-      <section className='flex flex-row gap-2 place-center mb-4'>
+      <section className='place-center mb-4 flex flex-row gap-2'>
         <TaskAdder tasks={tasks} />
       </section>
-      <ScrollArea className='h-[400px] '>
-        {
-          tasks.map((task) => (
-            <TaskItem key={task.name} task={task} />
-          ))
-        }
-      </ScrollArea>
+      <ul className='tasklist scrollbar-styles'>
+        {tasks.map((task) => (
+          <TaskItem key={task.name} task={task} />
+        ))}
+      </ul>
     </>
-  )
+  );
 }

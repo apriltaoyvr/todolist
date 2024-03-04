@@ -1,18 +1,19 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { cn } from "@/lib/utils";
-import Providers from "@/app/providers";
-import Navbar from "@/components/Navbar";
-import "./globals.css";
+import { Inter } from 'next/font/google';
+import Providers from '@/app/providers';
+import { cn } from '@/lib/utils';
+import Navbar from '@/components/Navbar';
+import type { Metadata } from 'next';
+import './globals.css';
 
 const fontSans = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
+  subsets: ['latin'],
+  variable: '--font-sans',
+});
 
 export const metadata: Metadata = {
-  title: "Todolist App",
-  description: "Simple todolist app using Next.js and Redux Toolkit",
+  metadataBase: new URL('https://todolist-redux-sigma.vercel.app/'),
+  title: 'Todo List App',
+  description: 'Simple todo list using Next.js and Redux Toolkit',
 };
 
 export default function RootLayout({
@@ -21,11 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable
-      )}>
+    <html lang='en' suppressHydrationWarning>
+      <body
+        className={cn(
+          'bg-background min-h-screen font-sans antialiased',
+          fontSans.variable,
+        )}
+      >
         <Providers>
           <Navbar />
           {children}

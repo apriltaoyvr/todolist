@@ -5,11 +5,11 @@ import taskListReducer from './slices/taskList';
 export const store = configureStore({
   reducer: {
     task: taskReducer,
-    taskList: taskListReducer
+    taskList: taskListReducer,
   },
 });
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

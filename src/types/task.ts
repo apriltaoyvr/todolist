@@ -3,4 +3,4 @@ export type Task = {
   name: string;
   starred: boolean;
   complete: boolean;
-}
+};

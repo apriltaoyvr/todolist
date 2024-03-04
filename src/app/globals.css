@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+@layer components {
+  .tasklist {
+    @apply relative max-h-[300px] scroll-pr-0.5 overflow-y-auto;
+    scrollbar-gutter: stable;
+  }
 }
 
 @layer utilities {
   .place-center {
     @apply place-content-center place-items-center;
+  }
+
+  .scrollbar-styles {
+    @apply scrollbar-thin scrollbar-thumb-neutral-900 hover:scrollbar-thumb-neutral-900/90 dark:scrollbar-thumb-neutral-50 dark:hover:scrollbar-thumb-neutral-50/90;
   }
 }

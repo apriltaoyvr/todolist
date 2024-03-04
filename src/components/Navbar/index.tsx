@@ -1,9 +1,9 @@
-import { ModeToggle } from "./ModeToggle"
+import { ModeToggle } from './ModeToggle';
 
 export default function Navbar() {
-  return(
-    <nav className='w-full sticky top-0 flex flex-row place-items-center place-content-end py-4 px-2'>
-      <ModeToggle/>
+  return (
+    <nav className='sticky top-0 flex w-full flex-row place-content-end place-items-center px-2 py-4'>
+      <ModeToggle />
     </nav>
-  )
+  );
 }

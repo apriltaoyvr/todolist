@@ -13,13 +13,18 @@ export const taskListSlice = createSlice({
     ],
   },
   reducers: {
+    // Adds a task to the list
+    // NOTE:  Math.random() is a temporary method for generating IDs
+    // This will be replaced with UUIDs once Mongo and Prisma are set up
     addTask: (state, action: PayloadAction<Task>) => {
-      const task = { ...action.payload, id: state.tasks.length + 1 };
+      const task = { ...action.payload, id: Math.floor(Math.random() * 5000) };
       state.tasks.push(task);
     },
+    // Removes a task from the list
     removeTask: (state, action: PayloadAction<Task>) => {
       state.tasks = state.tasks.filter((task) => task.id !== action.payload.id);
     },
+    // Toggles the starred property of a task
     toggleStarred: (state, action: PayloadAction<Task>) => {
       const taskToEdit = state.tasks.find(
         (task) => task.id === action.payload.id,
@@ -28,6 +33,7 @@ export const taskListSlice = createSlice({
         taskToEdit.starred = !taskToEdit.starred;
       }
     },
+    // Toggles the completion status of a task
     toggleCompletion: (state, action: PayloadAction<Task>) => {
       const taskToEdit = state.tasks.find(
         (task) => task.id === action.payload.id,
