@@ -36,7 +36,7 @@ export default function TaskAdder({ tasks }: { tasks: Task[] }) {
       />
       <TooltipProvider>
         <Tooltip>
-          <TooltipTrigger>
+          <TooltipTrigger asChild>
             <Button
               id='submit'
               aria-label='Submit task'

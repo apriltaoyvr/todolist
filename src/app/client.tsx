@@ -14,11 +14,11 @@ export default function HomeClient() {
       <section className='place-center mb-4 flex flex-row gap-2'>
         <TaskAdder tasks={tasks} />
       </section>
-      <ul className='tasklist scrollbar-styles'>
+      <ScrollArea className='h-[300px]'>
         {tasks.map((task) => (
           <TaskItem key={task.name} task={task} />
         ))}
-      </ul>
+      </ScrollArea>
     </>
   );
 }

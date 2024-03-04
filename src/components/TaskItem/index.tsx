@@ -15,6 +15,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { TaskItemButton } from './button';
 // Hooks
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 // Reducers
@@ -41,47 +42,19 @@ export default function TaskItem({ task }: { task: TaskType }) {
         {task.name}
       </span>
       <div>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button
-                aria-label='Star task'
-                variant='ghost'
-                onClick={() => dispatch(toggleStarred(task))}
-              >
-                {task.starred ? <StarFilledIcon /> : <StarIcon />}
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Star task</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
-        <TooltipProvider>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button
-                aria-label='Mark task as complete'
-                variant='ghost'
-                onClick={() => dispatch(toggleCompletion(task))}
-              >
-                {task.complete ? <Cross1Icon /> : <CheckIcon />}
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>Mark as complete</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <TaskItemButton text='Star task' handleClick={() => dispatch(toggleStarred(task))}>
+          {task.starred ? <StarFilledIcon /> : <StarIcon />}
+        </TaskItemButton>
+        <TaskItemButton text='Mark task as complete' handleClick={() => dispatch(toggleCompletion(task))}>
+          {task.complete ? <Cross1Icon /> : <CheckIcon />}
+        </TaskItemButton>
       </div>
-      <Button
-        aria-label='Delete task'
-        variant='ghost'
-        className={'group'}
-        onClick={() => dispatch(removeTask(task))}
+      <TaskItemButton
+        text='Delete task'
+        handleClick={() => dispatch(removeTask(task))}
       >
         <TrashIcon className='transition-colors group-hover:text-red-600' />
-      </Button>
+      </TaskItemButton>
     </li>
   );
 }
